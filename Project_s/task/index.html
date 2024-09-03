@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facebook Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <div class="container">
+      <div class="left-column">
+        <h1 class="logo">facebook</h1>
+        <p class="paramini">Facebook helps you connect and share with the people in your life.</p>
+      </div>
+        <div class="right-column">
+          <div class="login-form">
+            <input type="text" id="fullname" placeholder="Email address or phone number">
+            <input type="password" id="password" placeholder="password">
+            <button class="Login-button" id="button">LOG IN</button>
+            <a class="forgotten-password" href="#" >forgotten password?</a>
+            <hr>
+            <button class="create-account-button" onclick="Create()" href="Create.HTML" >Create new account</button>
+          </div>
+          <p class="create-page"><a class="create" href="#">Create a Page</a>for a celebrity, brand or business.</p>
+        </div>
+     </div>
+     <script>
+      document.querySelector('.login-form').addEventListener('submit', function() {
+        var email = document.getElementById('input[type="fullname"]').value;
+        var password = document.querySelector('input[type="password"]').value;
+      
+        if (!email || !fullname) {
+          alert('Please fill in both fields.');
+          event.preventDefault(); // Prevent form submission
+        }
+      });
+    
+
+       document.getElementById('forgotten-password').addEventListener('click', function() {
+        var passwordField = document.getElementById('password');
+  var type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+  passwordField.setAttribute('type', type);
+  this.textContent = type === 'password' ? 'Show' : 'Hide';
+});
+
+document.querySelector('.login-form').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent the form from submitting the default way
+  
+  // Process the form data here
+  var email = document.querySelector('input[type="text"]').value;
+  var password = document.querySelector('input[type="password"]').value;
+
+  console.log('Email:', email);
+  console.log('Password:', password);
+});
+
+document.querySelector('.forgotten-password').addEventListener('click', function(event) {
+  event.preventDefault(); // Prevent default link behavior
+  alert('Forgotten password feature is not implemented yet.');
+});
+
+document.querySelector('.create-account-button').addEventListener('click', function(createnewaccount) {
+  window.location.href = 'create'; // Redirect to a new page
+
+  function Create() {
+        window.open('https://www.youtube.com/watch?v=7ApPaZQxavcx', '_blank'); // Opens the link in a new tab
+    }
+});
+
+      </script>
+</body>
+</html>
+<!-- <link rel="preload" href="https://static.xx.fbcdn.net/rsrc.php/v3/yN/l/0,cross/DmsUoXmRKt0.css?_nc_x=Ij3Wp8lg5Kz" as="style" crossorigin="anonymous"> -->
